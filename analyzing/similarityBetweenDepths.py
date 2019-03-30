@@ -45,7 +45,7 @@ if __name__ == "__main__":
     plot = resultDF.plot(kind="bar", title="Similarity between category levels using NDDI", legend=False, ylim=(0,100), rot=0)
     plot.set_xlabel("Category level")
     plot.set_ylabel("Similarity in percent")
-    plot.get_figure().savefig(sys.argv[5])
+    plot.get_figure().savefig(sys.argv[5], bbox_inches='tight')
 
     result = dict()
     for x in range(depths):
