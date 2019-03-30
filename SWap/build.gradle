@@ -1,0 +1,32 @@
+plugins {
+    id 'java-library'
+    id 'com.github.johnrengelman.shadow' version '5.0.0'
+}
+
+repositories {
+    jcenter()
+    //mavenCentral()
+}
+
+jar {
+   manifest {
+       attributes 'Main-Class': 'de.softlang.swap.Main'
+   }
+}
+
+
+dependencies {
+    //api 'org.apache.commons:commons-math3:3.6.1'
+
+    implementation 'org.apache.spark:spark-sql_2.12:2.4.0'
+    implementation 'edu.stanford.nlp:stanford-corenlp:3.9.2'
+    implementation 'edu.stanford.nlp:stanford-corenlp:3.9.2:models'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    
+    testImplementation 'junit:junit:4.12'
+}
+
+task run (type: JavaExec, dependsOn: classes){
+    main = 'de.softlang.swap.Main'
+    classpath = sourceSets.main.runtimeClasspath
+}
