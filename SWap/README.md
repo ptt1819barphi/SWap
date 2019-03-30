@@ -2,6 +2,7 @@
 ## Requirements
 * Java
 * Gradle
+* CoreNLP Server
 
 ## Usage
 There are 2 different ways to start this application:
